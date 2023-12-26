@@ -1,3 +1,4 @@
+```
 createdb: error: database creation failed: HATA:  "UTF8" dil kodlaması, "tr_TR" sunucu yereli ile eşleşmiyor
 DETAIL:  Seçilen LC_TYPE ayarı, "LATIN5" dil kodlamasını gerektirir.
 [+] Creating databases 'msf_test'
@@ -14,6 +15,9 @@ To resolve this issue:
 - Has the database name changed? Check your database.yml config has the correct database name.
 
 To create your database, run:
+```
+
+```
 
         bin/rails db:create
 /usr/share/metasploit-framework/vendor/bundle/ruby/3.1.0/gems/activerecord-7.0.8/lib/active_record/connection_adapters/postgresql_adapter.rb:81:in `rescue in new_client'
@@ -32,7 +36,9 @@ To create your database, run:
 /usr/share/metasploit-framework/vendor/bundle/ruby/3.1.0/gems/activerecord-7.0.8/lib/active_record/tasks/database_tasks.rb:262:in `migrate'
 /usr/share/metasploit-framework/vendor/bundle/ruby/3.1.0/gems/activerecord-7.0.8/lib/active_record/railties/databases.rake:92:in `block (2 levels) in <top (required)>'
 /usr/share/metasploit-framework/vendor/bundle/ruby/3.1.0/gems/rake-13.1.0/exe/rake:27:in `<top (required)>'
+```
 
+```
 Caused by:
 PG::ConnectionBad: connection to server at "::1", port 5432 failed: �L�MC�L (FATAL):  "msf" veritaban� mevcut de�il
 /usr/share/metasploit-framework/vendor/bundle/ruby/3.1.0/gems/pg-1.5.4/lib/pg/connection.rb:696:in `async_connect_or_reset'
@@ -56,6 +62,7 @@ PG::ConnectionBad: connection to server at "::1", port 5432 failed: �L�MC�
 /usr/share/metasploit-framework/vendor/bundle/ruby/3.1.0/gems/rake-13.1.0/exe/rake:27:in `<top (required)>'
 Tasks: TOP => db:migrate
 (See full trace by running task with --trace)
+```
 
 ```
 postgres=# \l
@@ -71,7 +78,7 @@ postgres=# \l
 (3 rows)
 ```
 
-
+```
 postgres=# SET client_encoding = 'UTF8';
 
 postgres=# UPDATE pg_database SET datcollate='en_US.UTF-8', datctype='en_US.UTF-8' WHERE datname='postgres';
@@ -85,8 +92,9 @@ postgres=# UPDATE pg_database set encoding = pg_char_to_encoding('UTF8') where d
 postgres=# UPDATE pg_database SET datcollate='en_US.UTF-8', datctype='en_US.UTF-8' WHERE datname='template1';
 
 postgres=# UPDATE pg_database set encoding = pg_char_to_encoding('UTF8') where datname = 'template1' ;
+```
 
-
+```
 msfdb reinit
 [i] Database already started
 [+] Dropping database user 'msf'
@@ -98,6 +106,7 @@ msfdb reinit
 [+] Creating databases 'msf_test'
 [+] Creating configuration file '/usr/share/metasploit-framework/config/database.yml'
 [+] Creating initial database schema
+```
 
 ```
 postgres=# \l
