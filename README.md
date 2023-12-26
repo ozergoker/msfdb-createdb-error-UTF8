@@ -57,7 +57,7 @@ PG::ConnectionBad: connection to server at "::1", port 5432 failed: �L�MC�
 Tasks: TOP => db:migrate
 (See full trace by running task with --trace)
 
-
+```
 postgres=# \l
 
                                                   List of databases
@@ -69,7 +69,7 @@ postgres=# \l
  template1 | postgres | LATIN5   | libc            | tr_TR   | tr_TR |            |           | =c/postgres          +
            |          |          |                 |         |       |            |           | postgres=CTc/postgres
 (3 rows)
-
+```
 
 
 postgres=# SET client_encoding = 'UTF8';
@@ -99,7 +99,7 @@ msfdb reinit
 [+] Creating configuration file '/usr/share/metasploit-framework/config/database.yml'
 [+] Creating initial database schema
 
-
+```
 postgres=# \l
                                                        List of databases
    Name    |  Owner   | Encoding | Locale Provider |   Collate   |    Ctype    | ICU Locale | ICU Rules |   Access privileges   
@@ -112,4 +112,4 @@ postgres=# \l
  template1 | postgres | UTF8     | libc            | en_US.UTF-8 | en_US.UTF-8 |            |           | =c/postgres          +
            |          |          |                 |             |             |            |           | postgres=CTc/postgres
 (5 rows)
-
+```
